@@ -180,7 +180,25 @@ for(company of marketCaps) {
    }
 }
 console.log(megaCaps);
-   
+
+console.log("Low Beta stocks (<1): ");
+const lowBetaStocks = stockData2.filter(stock => stock.at(5) < 1);
+console.log(lowBetaStocks);
+
+console.log("Low Beta stocks 2: ");
+const lowBetaStocks_2 = stockData2.
+                                 filter(stock => stock.at(5) < 1).
+                                 map(stock => `${name(stock)} with Beta ${beta(stock)}`);
+
+console.log(lowBetaStocks_2);
+
+function name(stock) {
+   return stock.at(0);
+}
+
+function beta(stock) {
+   return stock.at(5);
+}
 
 </script>
 </html>
